@@ -5,11 +5,11 @@ import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 
-import { routes } from './app.routes';
 import {
   provideClientHydration,
   withEventReplay,
 } from '@angular/platform-browser';
+import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -28,7 +28,7 @@ export const appConfig: ApplicationConfig = {
           inputVariant: 'filled', // filled Input fields
           zIndex: {
             modal: 1100,    // dialog, sidebar
-            overlay: 1000,  // dropdown, overlaypanel
+            overlay: 1000,  // dropdown, overlay panel
             menu: 1000,     // overlay menus
             tooltip: 1100   // tooltip
           }
