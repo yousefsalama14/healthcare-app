@@ -1,0 +1,30 @@
+<p-table [value]="items()" [tableStyle]="{ 'min-width': '50rem' }" [loading]="loading()">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Patient ID</th>
+      <th>Doctor ID</th>
+      <th>Medication</th>
+      <th>Dosage</th>
+      <th>Date Issued</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-prescription>
+    <tr>
+      <td>{{ prescription.patientId }}</td>
+      <td>{{ prescription.doctorId }}</td>
+      <td>{{ prescription.medication }}</td>
+      <td>{{ prescription.dosage }}</td>
+      <td>{{ prescription.dateIssued }}</td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="loadingbody">
+    <tr>
+      <td><p-skeleton width="100%"></p-skeleton></td>
+      <td><p-skeleton width="100%"></p-skeleton></td>
+      <td><p-skeleton width="100%"></p-skeleton></td>
+      <td><p-skeleton width="100%"></p-skeleton></td>
+      <td><p-skeleton width="100%"></p-skeleton></td>
+    </tr>
+  </ng-template>
+</p-table>
+<p-button label="New Prescription" [routerLink]="['/prescriptions/new']" />
