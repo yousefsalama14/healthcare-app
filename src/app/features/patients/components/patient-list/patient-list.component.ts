@@ -3,11 +3,11 @@ import { Component, signal } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { Patient } from '../../../../core/models/patient.model';
 import { ButtonModule } from 'primeng/button';
-import { PatientsService } from '../../patients.service';
 import { BaseListComponent } from '../../../../shared/components/base-list/base-list.component';
 import { RouterModule } from '@angular/router';
 import { SkeletonModule } from 'primeng/skeleton';
 import { DialogModule } from 'primeng/dialog';
+import { PatientsService } from '../../../../core/services/patients.service';
 
 @Component({
   selector: 'app-patient-list',

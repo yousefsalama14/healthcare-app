@@ -5,7 +5,8 @@ import { FormlyFieldConfig, FormlyModule } from '@ngx-formly/core';
 import { FormlyPrimeNGModule } from '@ngx-formly/primeng';
 import { ButtonModule } from 'primeng/button';
 import { Appointment } from '../../../../core/models/appointment.model';
-import { AppointmentService } from '../../appointment.service';
+import { AppointmentService } from '../../../../core/services/appointment.service';
+import { appointmentFormConfig } from '../../../../config/forms/appointment-form.config';
 
 @Component({
   selector: 'app-appointment-form',
@@ -16,23 +17,7 @@ import { AppointmentService } from '../../appointment.service';
 export class AppointmentFormComponent {
   form = new FormGroup({});
   model: Appointment = { patientId: 0, date: '', time: '' };
-  fields: FormlyFieldConfig[] = [
-    {
-      key: 'patientId',
-      type: 'input',
-      props: { label: 'Patient ID', type: 'number', required: true },
-    },
-    {
-      key: 'date',
-      type: 'calendar', // PrimeNG calendar component
-      props: { label: 'Date', required: true, dateFormat: 'yy-mm-dd' },
-    },
-    {
-      key: 'time',
-      type: 'input',
-      props: { label: 'Time', placeholder: 'HH:MM', required: true },
-    },
-  ];
+  fields: FormlyFieldConfig[] = appointmentFormConfig;
 
   constructor(private appointmentService: AppointmentService) { }
 

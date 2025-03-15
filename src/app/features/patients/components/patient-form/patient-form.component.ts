@@ -2,11 +2,11 @@ import { Component, signal } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { FormlyFieldConfig, FormlyModule } from '@ngx-formly/core';
 import { FormlyPrimeNGModule } from '@ngx-formly/primeng';
-import { PatientsService } from '../../patients.service';
 import { Patient } from '../../../../core/models/patient.model';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
-import { formlyConfig } from '../../../../config/formly.config';
+import { PatientsService } from '../../../../core/services/patients.service';
+import { patientFormConfig } from '../../../../config/forms/patient-form.config';
 
 @Component({
   selector: 'app-patient-form',
@@ -17,7 +17,7 @@ import { formlyConfig } from '../../../../config/formly.config';
 export class PatientFormComponent {
   form = new FormGroup({});
   model = signal<Patient>({ name: '', age: 0, condition: '' });
-  fields: FormlyFieldConfig[] = formlyConfig;
+  fields: FormlyFieldConfig[] = patientFormConfig;
 
   constructor(private patientService: PatientsService) { }
 

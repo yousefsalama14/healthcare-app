@@ -2,10 +2,11 @@ import { Component, signal } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../../core/services/auth.service';
 import { CommonModule } from '@angular/common';
-import { FormlyModule } from '@ngx-formly/core';
+import { FormlyFieldConfig, FormlyModule } from '@ngx-formly/core';
 import { FormlyPrimeNGModule } from '@ngx-formly/primeng';
 import { ButtonModule } from 'primeng/button';
 import { Router } from '@angular/router';
+import { loginFormConfig } from '../../../config/forms/login-form.config';
 
 @Component({
   selector: 'app-login',
@@ -16,10 +17,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   form = new FormGroup({});
   model = signal<{ username: string; password: string }>({ username: '', password: '' });
-  fields = [
-    { key: 'username', type: 'input', props: { label: 'Username', required: true } },
-    { key: 'password', type: 'password', props: { label: 'Password', required: true } },
-  ];
+  fields: FormlyFieldConfig[] = loginFormConfig;
 
   constructor(private authService: AuthService, private router: Router) { }
 

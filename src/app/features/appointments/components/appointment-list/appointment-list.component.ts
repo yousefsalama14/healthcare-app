@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { Appointment } from '../../../../core/models/appointment.model';
 import { BaseListComponent } from '../../../../shared/components/base-list/base-list.component';
-import { AppointmentService } from '../../appointment.service';
+import { AppointmentService } from '../../../../core/services/appointment.service';
 
 @Component({
   selector: 'app-appointment-list',
