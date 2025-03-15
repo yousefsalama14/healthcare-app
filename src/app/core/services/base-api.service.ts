@@ -2,17 +2,14 @@ import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
-
 @Injectable({
   providedIn: 'root',
 })
-
 // Abstract base service
-
-export class BaseApiService<T> {
+export abstract class BaseApiService<T> {
   protected baseUrl: string;
 
-  constructor(protected http: HttpClient, @Inject(String) endpoint: string) {
+  constructor(protected http: HttpClient, endpoint: string) {
     this.baseUrl = `${environment.apiUrl}/${endpoint}`;
   }
 
