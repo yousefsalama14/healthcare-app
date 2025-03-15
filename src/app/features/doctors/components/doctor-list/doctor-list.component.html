@@ -1,0 +1,24 @@
+<p-table [value]="items()" [tableStyle]="{ 'min-width': '50rem' }" [loading]="loading()">
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+      <th pSortableColumn="specialty">Specialty <p-sortIcon field="specialty"></p-sortIcon></th>
+      <th>Email</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-doctor>
+    <tr>
+      <td>{{ doctor.name }}</td>
+      <td>{{ doctor.specialty }}</td>
+      <td>{{ doctor.email }}</td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="loadingbody">
+    <tr>
+      <td><p-skeleton width="100%"></p-skeleton></td>
+      <td><p-skeleton width="100%"></p-skeleton></td>
+      <td><p-skeleton width="100%"></p-skeleton></td>
+    </tr>
+  </ng-template>
+</p-table>
+<p-button label="New Doctor" [routerLink]="['/doctors/new']" />
