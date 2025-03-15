@@ -1,0 +1,9 @@
+{
+  "patients": [
+    { "id": 1, "name": "John Doe", "age": 45, "condition": "Diabetes" },
+    { "id": 2, "name": "Jane Smith", "age": 32, "condition": "Hypertension" }
+  ],
+  "appointments": [
+    { "id": 1, "patientId": 1, "date": "2025-03-15", "time": "10:00" }
+  ]
+}
